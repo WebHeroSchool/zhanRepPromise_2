@@ -20,7 +20,6 @@ window.setTimeout(function () {
     let getUrl = new Promise((resolve, reject) => {
     setTimeout(() => url ? resolve(url) : reject("Error URL!"), 1500)
     });
-    
     Promise.all([getUrl, getDate])
         .then(([url, date]) => fetch(url))
         .then(res => res.json())
